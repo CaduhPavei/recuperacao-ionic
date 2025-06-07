@@ -1,0 +1,82 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Agendamento de consulta</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-select
+            label="Paciente"
+            interface="popover"
+            [(ngModel)]="consulta.paciente"
+            name="paciente"
+          >
+            @for(paciente of pacientes; track paciente.id) {
+            <ion-select-option [value]="paciente">{{
+              paciente.nome
+            }}</ion-select-option>
+            } @empty {
+            <ion-select-option disabled
+              >Nenhum paciente cadastrado</ion-select-option
+            >
+            }
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Médico"
+            labelPlacement="floating"
+            fill="clear"
+            [(ngModel)]="consulta.medico"
+            name="medico"
+          />
+        </ion-item>
+
+        <ion-item>
+          <ion-textarea
+            label="Obervação"
+            labelPlacement="floating"
+            fill="clear"
+            rows="3"
+            [(ngModel)]="consulta.observacoes" name="observacoes"
+          >
+          </ion-textarea>
+        </ion-item>
+        
+        <ion-item>
+          <ion-input
+            label="Data da consula"
+            labelPlacement="floating"
+            fill="clear"
+            type="date"
+            [(ngModel)]="consulta.data"
+            name="data"
+          />
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Valor"
+            labelPlacement="floating"
+            fill="clear"
+            [(ngModel)]="consulta.valor"
+            name="valor"
+          >
+          </ion-input>
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          color="dark"
+          class="ion-margin-top"
+          (click)="salvar()"
+        >
+          Salvar
+          <ion-icon name="save-outline" slot="start" />
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

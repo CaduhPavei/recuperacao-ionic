@@ -1,0 +1,20 @@
+{
+  "consultas": [
+    {
+      "id": "7ed4",
+      "paciente": {
+        "id": 2,
+        "nome": "Xena",
+        "idade": "3 meses",
+        "peso": "8Kg",
+        "raca": "Pastor Alemo",
+        "tipoAnimal": "Cachorro",
+        "tutor": "Lucemar"
+      },
+      "medico": "dasdsad",
+      "data": "2025-06-20",
+      "valor": "11",
+      "observacoes": "dsadasdadasdsadasdsadasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ]
+}

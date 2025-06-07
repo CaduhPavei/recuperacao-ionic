@@ -1,0 +1,86 @@
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Cadastro de autor</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form>
+        <ion-item>
+          <ion-input
+            label="Nome"
+            labelPlacement="floating"
+            fill="clear"
+            [(ngModel)]="paciente.nome"
+            name="nome"
+          />
+        </ion-item>
+
+        <ion-item>
+          <ion-select
+            label="Tipo de animal"
+            interface="popover"
+            [(ngModel)]="paciente.tipoAnimal"
+            name="tipoAnimal"
+          >
+            <ion-select-option value="Cachorro">Cachorro</ion-select-option>
+            <ion-select-option value="Gato">Gato</ion-select-option>
+            <ion-select-option value="Ave">Ave</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Raça"
+            labelPlacement="floating"
+            fill="clear"
+            type="raca"
+            [(ngModel)]="paciente.raca"
+            name="raca"
+          />
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Peso"
+            labelPlacement="floating"
+            fill="clear"
+            type="peso"
+            [(ngModel)]="paciente.peso"
+            name="peso"
+          />
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Idade"
+            labelPlacement="floating"
+            fill="clear"
+            type="idade"
+            [(ngModel)]="paciente.idade"
+            name="idade"
+          />
+        </ion-item>
+
+        <ion-item>
+          <ion-input
+            label="Tutor"
+            labelPlacement="floating"
+            fill="clear"
+            [(ngModel)]="paciente.tutor"
+            name="tutor"
+          />
+        </ion-item>
+
+        <ion-button
+          expand="block"
+          color="dark"
+          class="ion-margin-top"
+          (click)="salvar()"
+        >
+          Salvar
+          <ion-icon name="save-outline" slot="start" />
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

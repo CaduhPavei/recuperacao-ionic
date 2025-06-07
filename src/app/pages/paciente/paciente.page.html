@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Pacientes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Pacientes cadastrados</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        @for(paciente of pacientes; track paciente.id) {
+        <ion-item>
+          <ion-label>
+            <h2>{{ paciente.nome }} - {{ paciente.tutor }}</h2>
+            <p><strong>Raça:</strong> {{ paciente.raca }}</p>
+            <p><strong>Tipo de animal:</strong> {{ paciente.tipoAnimal }}</p>
+            <p><strong>Peso:</strong> {{ paciente.peso }}</p>
+            <p><strong>Idade:</strong> {{ paciente.idade }}</p>
+          </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="primary" (click)="abrirModal(paciente)">
+              <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" (click)="excluirPaciente(paciente)">
+              <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        } @empty {
+        <ion-text>Nenhum paciente cadastrado</ion-text>
+        }
+      </ion-list>
+      <ion-button color="dark" fill="outline" expand="block" (click)="abrirModal()">
+        Cadastrar
+        <ion-icon name="add-outline" slot="start" />
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

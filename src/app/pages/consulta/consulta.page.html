@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Consultas</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home" />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"
+  ><ion-card>
+    <ion-card-header>
+      <ion-card-title>Consultas</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        @for(consulta of consultas$ | async; track consulta.id) {
+        <ion-item>
+          <ion-label>
+            <h2>{{ consulta.paciente.nome }}</h2>
+            <p><strong>Medico:</strong> {{ consulta.medico }}</p>
+            <p>
+              <strong>Data da consulta:</strong> {{ consulta.data| date:
+              'dd/MM/YYYY' }}
+            </p>
+            <p><strong>Valor:</strong> {{ consulta.valor }}</p>
+            <p><strong>Observações:</strong> {{ consulta.observacoes}}</p>
+          </ion-label>
+
+          <ion-buttons slot="end">
+            <ion-button color="primary" (click)="abrirModal(consulta)">
+              <ion-icon name="create-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" (click)="excluirConsulta(consulta.id!)">
+              <ion-icon name="trash-outline" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+        } @empty {
+        <ion-text>Nenhuma consulta agendada</ion-text>
+        }
+      </ion-list>
+      <ion-button
+        color="dark"
+        fill="outline"
+        expand="block"
+        (click)="abrirModal()"
+      >
+        Adicionar
+        <ion-icon name="add-outline" slot="start" />
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
