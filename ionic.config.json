@@ -1,0 +1,7 @@
+{
+  "name": "recuperacao",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
