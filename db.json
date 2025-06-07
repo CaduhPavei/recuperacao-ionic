@@ -6,15 +6,15 @@
         "id": 2,
         "nome": "Xena",
         "idade": "3 meses",
-        "peso": "8Kg",
-        "raca": "Pastor Alemo",
+        "peso": "9kg",
+        "raca": "Pastor alemao",
         "tipoAnimal": "Cachorro",
-        "tutor": "Lucemar"
+        "tutor": "Luiz Fernando"
       },
-      "medico": "dasdsad",
-      "data": "2025-06-20",
-      "valor": "11",
-      "observacoes": "dsadasdadasdsadasdsadasaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+      "medico": "Fabricio",
+      "data": "2025-06-28",
+      "valor": "110",
+      "observacoes": "Muito docil"
     }
   ]
 }
